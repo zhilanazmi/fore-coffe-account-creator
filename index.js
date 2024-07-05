@@ -128,6 +128,7 @@ const setPin = async (accessToken, pin) => {
 
 const main = async () => {
   const accessToken = await getToken();
+  console.log('Fore Account Creator created by Zhillan Azmi')
   const phoneNumber = readlineSync.question('Enter phone number: ');
 
   const isRegistered = await checkPhoneNumber(accessToken, phoneNumber);
