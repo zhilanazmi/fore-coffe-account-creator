@@ -126,21 +126,6 @@ const setPin = async (accessToken, pin) => {
   }
 };
 
-const getRandomName = async () => {
-    try {
-      const response = await axios.post('https://randommer.io/Name', 'type=firstname&number=1', {
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest',
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      });
-      return response.data[0];
-    } catch (error) {
-      console.error('Error getting random name:', error);
-      process.exit(1);
-    }
-  };
-
 const main = async () => {
   const accessToken = await getToken();
   const phoneNumber = readlineSync.question('Enter phone number: ');
@@ -155,7 +140,7 @@ const main = async () => {
   await requestOTP(accessToken, phoneNumber);
 
   const otp = readlineSync.question('Enter OTP: ');
-  const name = await getRandomName();
+  const name = 'ZHILAN'
 
 
   await signUp(accessToken, phoneNumber, otp, name, referral);
