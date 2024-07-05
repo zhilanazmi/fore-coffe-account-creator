@@ -155,6 +155,7 @@ const main = async () => {
   await requestOTP(accessToken, phoneNumber);
 
   const otp = readlineSync.question('Enter OTP: ');
+  const name = await getRandomName();
 
 
   await signUp(accessToken, phoneNumber, otp, name, referral);
