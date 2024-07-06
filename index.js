@@ -146,7 +146,7 @@ const main = async () => {
 
   await signUp(accessToken, phoneNumber, otp, name, referral);
   await setPin(accessToken, pin);
-  const accountInfo = `${phoneNumber}|${pin}\n`;
+  const accountInfo = `Nama: ${name} | No HP: ${phoneNumber} | Pin: ${pin}\n`;
   fs.appendFileSync(accountsFilePath, accountInfo, 'utf-8');
 
 };
